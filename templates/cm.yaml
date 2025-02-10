@@ -1,0 +1,11 @@
+{{- $config := .Values.configmap -}}
+{{- range $namespace := .Values.namespaces }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ $config.name }}-{{ $namespace }}
+  namespace: {{ $namespace }}
+data:
+{{ toYaml $config.data | indent 2 }}
+---
+{{- end }}

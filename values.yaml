@@ -1,0 +1,11 @@
+# List of namespaces where the ConfigMap will be created.
+namespaces:
+  - ns-1
+  - ns-2
+  - ns-3
+
+# ConfigMap configuration.
+configmap:
+  name: dummy-configmap
+  data:
+    key: "dummy-value"
